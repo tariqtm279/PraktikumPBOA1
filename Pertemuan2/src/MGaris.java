@@ -1,6 +1,6 @@
 /*
  * Nama File   : MGaris.java
- * Deskripsi   : berisi aplikasi method dalam class Titik
+ * Deskripsi   : berisi aplikasi method dalam class Garis
  * Pembuat     : Arsy Thariq Munawar
  * Tanggal     : 23 Februari 2026
  */
