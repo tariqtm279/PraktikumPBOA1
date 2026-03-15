@@ -1,5 +1,5 @@
 /**
- * File : Main.java
+ * File : MBangunDatar.java
  * Deskripsi : Class utama (main) untuk menjalankan semua class
  * Nama : Arsy Thariq Munawar
  * Tanggal : 9 Maret 2026
