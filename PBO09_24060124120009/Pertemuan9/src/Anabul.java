@@ -20,8 +20,17 @@ abstract class Anabul {
     //method suara
     abstract void suara();
 
-    void getNama(){
-        System.out.println("Nama panggilan hewan: " + this.panggilan);
+    String getNama(){
+        return this.panggilan;
+    }
+
+    String getPanggilan(){
+        return this.panggilan;
+    }
+
+    void printInfo(){
+        System.out.println("Nama panggilan : " + this.panggilan);
+        System.out.println("Jenis          : " + this.getClass().getSimpleName());
     }
 
     void setNama(String panggilan){

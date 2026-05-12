@@ -14,7 +14,7 @@ public class MainPiaraan{
         koleksi.showAnabul();
 
         // a. getNbelm
-        System.out.println("\nTotal Anabul: " + koleksi.getnbelm());
+        System.out.println("\nTotal Anabul: " + koleksi.getNbelm());
 
         // h. countKucing
         System.out.println("Jumlah Kucing: " + koleksi.countKucing());
@@ -29,6 +29,6 @@ public class MainPiaraan{
         // Lihat hasil akhir
         System.out.println("\nKoleksi Akhir:");
         koleksi.showAnabul();
-        System.out.println("nbelm sekarang: " + koleksi.getnbelm());
+        System.out.println("nbelm sekarang: " + koleksi.getNbelm());
     }
 }
