@@ -1,79 +1,95 @@
-import java.util.ArrayList;
-import java.util.List;
-class Piaraan {
-    //atribut
+/* Nama file : Piaraan.java
+ * Deskripsi : Kelas untuk koleksi queue Piaraan
+ * Pembuat   : Arsy Thariq Munawar
+ * NIM       : 24060124120009
+ * Tanggal   : 9 Mei 2026
+* */
+
+import java.util.*;
+
+public class Piaraan{
+    /* ATRIBUT */
     private int nbelm;
-    private List<Anabul> Lanabul;
+    private Queue<Anabul> Lanabul;
 
-    //constructor
-    public Piaraan() {
-        this.nbelm = 0;
-        this.Lanabul = new ArrayList<>();
+    /* OPERATOR */
+    /* KONSTRUKTOR */
+    public Piaraan(){
+        Lanabul = new LinkedList<>();
+        nbelm = 0;
     }
 
-    //method
-    public int getnbelm() {
-        return this.nbelm;
+    /* SELEKTOR */
+    public int getNbelm(){
+        return nbelm;
     }
 
-    public void enqueueAnabul(Anabul anabul) {
-        Lanabul.add(anabul);
-        nbelm++;
+    /* MUTATOR */
+
+    /* OPERATOR LAINNYA */
+    public void enqueueAnabul(Anabul X){
+        Lanabul.add(X);
+        this.nbelm++;
     }
 
-    public boolean isMember(Anabul anabul) {
-        return Lanabul.contains(anabul);
+    public boolean isMember(Anabul X){
+        return Lanabul.contains(X);
     }
 
-    public Anabul getAnabul(){
-        if (nbelm > 0) {
-            return Lanabul.get(0);
-        } else {
-            return null; 
+    public void getAnabul(){
+        Anabul x = Lanabul.peek();
+        x.printInfo();
+    }
+
+    public void dequeueAnabul(){
+        if(!Lanabul.isEmpty()){
+            Lanabul.poll();
+            this.nbelm--;
         }
     }
 
-    public Anabul dequeueAnabul() {
-        if (nbelm > 0) {
-            nbelm--;
-            return Lanabul.remove(0);
-        } else {
-            return null; 
+    public void showAnabul(){
+        int i = 0;
+        for(Anabul a : Lanabul){
+            i++;
+            System.out.println(i + ". " + a.getNama());
         }
     }
 
-    public void showAnabul() {
-        System.out.println("Daftar Anabul dalam Piaran:");
-        for (Anabul anabul : Lanabul) {
-            anabul.getNama();
-        }
-    }
-
-    public int countKucing() {
+    public int countKucing(){
         int count = 0;
-        for (Anabul a : Lanabul) {
-            if (a instanceof Kucing) { // Kucing adalah subclass dari Anabul
+        for(Anabul a : Lanabul){
+            if(a instanceof Kucing){
                 count++;
             }
         }
+
         return count;
     }
 
-    public double bobotKucing() {
-        double totalBobot = 0;
-        for (Anabul a : Lanabul) {
-            if (a instanceof Kucing) {
-                // Casting ke Kucing untuk akses atribut spesifik kucing
-                totalBobot += ((Kucing) a).getBobot(); 
+    public int bobotKucing(){
+        int bobot = 0;
+        for(Anabul a : Lanabul){
+            if(a instanceof Kucing){
+                Kucing b = (Kucing) a;
+                bobot += b.getBobot();
             }
         }
-        return totalBobot;
-    }   
 
-    public void showJenisAnabul() {
-        System.out.println("Daftar Panggilan dan Jenis:");
-        for (Anabul a : Lanabul) {
-            System.out.println(a.panggilan + " [" + a.getClass().getName() + "]");
-        }
-    } 
+        return bobot;
+    }
+
+    public void showJenisAnabul(){
+        int i = 0;
+        for(Anabul a : Lanabul){
+            i++;
+            System.out.println(i + ". Nama Objek  : " + a.getNama());
+            System.out.println("   Panggilan   : " + a.getPanggilan());
+            System.out.println("   Jenis Objek : " + a.getClass());
+        } 
+    }
+
+
+
+
 }

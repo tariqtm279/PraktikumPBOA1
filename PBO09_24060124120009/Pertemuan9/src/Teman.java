@@ -1,3 +1,9 @@
+/* Nama file : Teman.java
+ * Deskripsi : Kelas untuk koleksi list Teman
+ * Pembuat   : Arsy Thariq Munawar
+ * NIM       : 24060124120009
+ * Tanggal   : 9 Mei 2026
+* */
 import java.util.ArrayList;
 import java.util.List;
 
